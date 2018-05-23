@@ -16,20 +16,23 @@ ol.breadcrumb {
 }
 
 .pagination li {
-  display: inline !important;
-  border: 0 !important;
+    display: inline !important;
+    border: 0 !important;
 }
 
 // Related-Pages
 .related-pages {
     padding: 0;
     list-style: none;
+
     li {
         border-bottom: 1px solid $border-color;
         line-height: $core-font-size + 20px;
+
         &:last-child {
             border-bottom: 0;
         }
+
         a {
             display: block;
         }
