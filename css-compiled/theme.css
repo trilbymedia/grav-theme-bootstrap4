@@ -130,9 +130,16 @@ ol.breadcrumb {
 .sidebar-content {
   margin-bottom: 50px; }
 
-.pagination li {
-  display: inline !important;
-  border: 0 !important; }
+ul.pagination {
+  justify-content: center; }
+  ul.pagination li {
+    border: 0; }
+    ul.pagination li .page-link {
+      display: block;
+      padding: .5rem .75rem; }
+      ul.pagination li .page-link span {
+        display: initial;
+        padding: 0; }
 
 .related-pages {
   padding: 0;

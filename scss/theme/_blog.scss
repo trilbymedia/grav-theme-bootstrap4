@@ -15,9 +15,42 @@ ol.breadcrumb {
     margin-bottom: 50px;
 }
 
-.pagination li {
-    display: inline !important;
-    border: 0 !important;
+// Pagination
+ul.pagination {
+    justify-content: center;
+
+    li {
+        border: 0;
+
+        .page-link {
+            display: block;
+            padding: .5rem .75rem;
+
+            span {
+                display: initial;
+                padding: 0;
+            }
+        }
+    }
+
+    //li {
+    //    border-right-width: 0;
+    //
+    //    &:first-child {
+    //        border-radius: $border-radius 0 0 $border-radius;
+    //    }
+    //
+    //    &:last-child {
+    //        border-right-width: 1px;
+    //        border-radius: 0 $border-radius $border-radius 0;
+    //    }
+    //
+    //    a {
+    //        &:hover {
+    //            text-decoration: none;
+    //        }
+    //    }
+    //}
 }
 
 // Related-Pages

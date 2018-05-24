@@ -43,7 +43,7 @@
         {% if config.plugins.pagination.enabled and collection.params.pagination %}
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 text-center">
+                <div class="col-sm-8">
                     {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
                 </div>
             </div>
