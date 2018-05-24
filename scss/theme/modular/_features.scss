@@ -18,6 +18,7 @@
         p {
             margin: 10px 0;
             font-size: $core-font-size + 3px;
+
             @include breakpoint(mobile-only) {
                 font-size: $core-font-size;
             }
@@ -31,12 +32,13 @@
             display:block;
             float: left;
             width: 25%;
-            @include breakpoint(mobile-only) {
-                width: 100%;
-            }
             vertical-align: top;
             margin-top: 20px;
             margin-bottom: 10px;
+
+            @include breakpoint(mobile-only) {
+                width: 100%;
+            }
 
             i.fa {
                 font-size: 40px;
@@ -44,7 +46,6 @@
             }
 
             h4 {
-
                 font-size: 16px;
                 font-weight: normal
             }
@@ -57,7 +58,6 @@
         }
 
         &.big {
-
             text-align: center;
 
             .feature {
@@ -90,7 +90,5 @@
                 }
             }
         }
-
     }
-
 }

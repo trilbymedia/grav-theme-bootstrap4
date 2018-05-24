@@ -1,7 +1,7 @@
 {% embed 'partials/base.html.twig' %}
 
-	{% set collection = page.collection() %}
-	{% set base_url = page.url %}
+    {% set collection = page.collection() %}
+    {% set base_url = page.url %}
     {% set feed_url = base_url %}
 
     {% if base_url == '/' %}
@@ -12,7 +12,7 @@
         {% set feed_url = base_url~'/'~page.slug %}
     {% endif  %}
 
-	{% block content %}
+    {% block content %}
         <div class="header">
             <div class="container">
                 {{ page.content }}
@@ -32,14 +32,14 @@
 
                 </div>
 
-        		<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-       				{% include 'partials/sidebar.html.twig' with {'blog':page} %}
-        		</div>
+                <div class="col-sm-3 offset-sm-1 blog-sidebar">
+                    {% include 'partials/sidebar.html.twig' with {'blog':page} %}
+                </div>
             </div>
         </div>
-	{% endblock %}
+    {% endblock %}
 
-	{% block pagination %}
+    {% block pagination %}
         {% if config.plugins.pagination.enabled and collection.params.pagination %}
         <div class="container">
             <div class="row">
@@ -48,8 +48,8 @@
                 </div>
             </div>
         </div>
-	    {% endif %}
-	{% endblock %}
+        {% endif %}
+    {% endblock %}
 
 {% endembed %}
 
