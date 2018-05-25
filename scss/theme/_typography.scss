@@ -20,9 +20,19 @@ td {
 
 /* Notice Styles */
 blockquote {
-    padding: 0 0 0 20px !important;
-    font-size: 16px;
-    color: #666;
+    margin-bottom: 1rem;
+    padding-left: 20px;
+    font-size: 1.25rem;
+
+    cite {
+        display: block;
+        font-size: 80%;
+        color: $text-text;
+
+        &::before {
+            content: "\2014 \00A0";
+        }
+    }
 
     > blockquote > blockquote {
         margin: 0;
