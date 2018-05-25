@@ -28,12 +28,13 @@
                 {% endfor %}
                 {% for mitem in site.menu %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ mitem.url }}">{{ mitem.text }}</a>
+                        {% set icon = mitem.icon ? '<i class="fa fa-fw fa-' ~ mitem.icon ~ '"></i> ' : '' %}
+                        <a class="nav-link" href="{{ mitem.url }}">{{ icon }}{{ mitem.text }}</a>
                     </li>
                 {% endfor %}
 
                 {% if config.plugins.login.enabled and grav.user.username %}
-                    <li class="nav-item"><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
+                    <li class="nav-item"><span class="nav-link"><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</span></li>
                 {% endif %}
             </ul>
         </div>
