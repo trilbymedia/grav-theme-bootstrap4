@@ -3,7 +3,7 @@
         {{ content }}
 
         {% for button in page.header.buttons %}
-            <a class="btn{% if button.primary %} btn-default{% endif %}" href="{{ base_url_relative }}{{ button.url }}">{{ button.text }}</a>
+            <a class="btn{% if button.primary %} btn-primary{% endif %}" href="{{ base_url_relative }}{{ button.url }}">{{ button.text }}</a>
         {% endfor %}
     </div>
 </div>

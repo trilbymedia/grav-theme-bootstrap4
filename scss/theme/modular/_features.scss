@@ -1,9 +1,8 @@
 // Modular Showcase styling
 .modular {
     .features {
-        padding: 50px 0;
+        padding: 3.125rem 0;
         text-align: center;
-        @include clearfix;
 
         h2 {
             margin: 0;
@@ -13,6 +12,10 @@
         h2 + h3 {
             margin-top: 0;
             font-weight: normal;
+        }
+
+        h4 {
+            margin: 0.625rem 0;
         }
 
         p {
@@ -26,34 +29,27 @@
 
         .feature-items {
             margin-top: 30px;
-        }
 
-        .feature {
-            display:block;
-            float: left;
-            width: 25%;
-            vertical-align: top;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            .feature {
+                display: block;
+                vertical-align: top;
+                margin-top: 20px;
+                margin-bottom: 10px;
 
-            @include breakpoint(mobile-only) {
-                width: 100%;
-            }
+                i.fa {
+                    font-size: 2.5rem;
+                    color: $header-bg;
+                }
 
-            i.fa {
-                font-size: 40px;
-                color: $header-bg;
-            }
+                h4 {
+                    font-size: 1rem;
+                    font-weight: normal;
+                }
 
-            h4 {
-                font-size: 16px;
-                font-weight: normal
-            }
-
-            p {
-                display: inline-block;
-                font-size: $core-font-size;
-                margin: 5px 0 10px;
+                p {
+                    font-size: $core-font-size;
+                    margin: 5px 0 10px;
+                }
             }
         }
 
@@ -61,32 +57,39 @@
             text-align: center;
 
             .feature {
-                width: 50%;
                 margin: 30px 0;
-            }
 
-            i.fa {
-                font-size: 50px;
-                float: left;
-            }
+                &.has-icon {
+                    display: flex;
 
-            .feature-content {
-                padding-right: 15px;
+                    i.fa {
+                        flex: 0 0 auto;
+                        font-size: 3.125rem;
+                    }
 
-                &.push {
-                    margin-left: 90px;
+                    .feature-content {
+                        flex: 1 1 auto;
+
+                        &.push {
+                            margin-left: 35px;
+                        }
+                    }
                 }
 
-                h4 {
-                    font-size: 24px;
-                    text-align: left;
-                    margin: 0;
-                }
+                .feature-content {
+                    padding-right: 15px;
 
-                p {
-                    padding: 0;
-                    text-align: left;
-                    font-size: $core-font-size;
+                    h4 {
+                        font-size: 1.5rem;
+                        text-align: left;
+                        margin: 0;
+                    }
+
+                    p {
+                        padding: 0;
+                        text-align: left;
+                        font-size: $core-font-size;
+                    }
                 }
             }
         }
