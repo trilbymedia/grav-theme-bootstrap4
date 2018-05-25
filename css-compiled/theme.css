@@ -87,7 +87,6 @@ body {
   background-image: -webkit-linear-gradient(#563f79, #6e519b);
   background-image: linear-gradient(#563f79, #6e519b);
   margin-top: -20px;
-  margin-bottom: 30px;
   padding-top: 65px;
   padding-bottom: 50px;
   text-align: center;
@@ -123,6 +122,9 @@ body {
     @media only all and (max-width: 47.938rem) {
       .header .btn {
         font-size: 1.25rem; } }
+
+.main-content {
+  margin-top: 2rem; }
 
 .footer {
   position: absolute;

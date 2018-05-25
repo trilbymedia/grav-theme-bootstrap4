@@ -27,10 +27,10 @@ body {
     margin-bottom: 60px;
 }
 
+// Header
 .header {
     @include linear-gradient(darken($header-bg,5%), lighten($header-bg,5%));
     margin-top: -20px;
-    margin-bottom: 30px;
     padding-top: 65px;
     padding-bottom: 50px;
     text-align: center;
@@ -79,6 +79,12 @@ body {
     }
 }
 
+// Main
+.main-content {
+    margin-top: 2rem;
+}
+
+// Footer
 .footer {
     position: absolute;
     bottom: 0;

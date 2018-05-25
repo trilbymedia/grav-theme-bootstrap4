@@ -18,22 +18,24 @@
                 {{ page.content }}
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 blog-main">
+        <div class="main-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 blog-main">
 
-                    {% if config.plugins.breadcrumbs.enabled %}
-                        {% include 'partials/breadcrumbs.html.twig' %}
-                    {% endif %}
+                        {% if config.plugins.breadcrumbs.enabled %}
+                            {% include 'partials/breadcrumbs.html.twig' %}
+                        {% endif %}
 
-                    {% for child in collection %}
-                        {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
-                    {% endfor %}
+                        {% for child in collection %}
+                            {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
+                        {% endfor %}
 
-                </div>
+                    </div>
 
-                <div class="col-sm-3 offset-sm-1 blog-sidebar">
-                    {% include 'partials/sidebar.html.twig' with {'blog':page} %}
+                    <div class="col-sm-3 offset-sm-1 blog-sidebar">
+                        {% include 'partials/sidebar.html.twig' with {'blog':page} %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +43,7 @@
 
     {% block pagination %}
         {% if config.plugins.pagination.enabled and collection.params.pagination %}
-        <div class="container">
+        <div class="container pagination-container">
             <div class="row">
                 <div class="col-sm-8">
                     {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
