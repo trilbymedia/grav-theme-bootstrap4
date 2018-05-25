@@ -55,6 +55,14 @@ body {
     h2 {
         margin-top: 0;
         font-weight: normal;
+
+        @include breakpoint(tablet-range) {
+            font-size: 30px;
+        }
+
+        @include breakpoint(mobile-only) {
+            font-size: 25px;
+        }
     }
 
     .btn {

@@ -107,6 +107,12 @@ body {
   .header h2 {
     margin-top: 0;
     font-weight: normal; }
+    @media only all and (min-width: 48rem) and (max-width: 59.938rem) {
+      .header h2 {
+        font-size: 30px; } }
+    @media only all and (max-width: 47.938rem) {
+      .header h2 {
+        font-size: 25px; } }
   .header .btn {
     font-size: 1.375rem;
     padding: 10px 30px;
