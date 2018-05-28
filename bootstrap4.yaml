@@ -1,2 +1,5 @@
+navbar_style: navbar-light
+navbar_bgcolor: '#ffffff'
+
 dropdown:
   enabled: false

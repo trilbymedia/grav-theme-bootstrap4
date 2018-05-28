@@ -18,6 +18,22 @@ dependencies:
 form:
   validation: strict
   fields:
+
+    navbar_style:
+      type: select
+      label: NavBar Style
+      size: small
+      default: navbar-light
+      options:
+        navbar-dark: Dark
+        navbar-light: Light
+
+    navbar_bgcolor:
+      type: colorpicker
+      label: NavBar BG Color
+      size: small
+      default: '#ffffff'
+
     dropdown.enabled:
         type: toggle
         label: Dropdown in navbar
