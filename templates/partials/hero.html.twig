@@ -1,0 +1,17 @@
+<div class="header hero {{ page.header.hero_classes }} {{ classes }} {{ page.header.hero_scroll ? 'hero-scroll-icon' : '' }}" {% if page.header.hero_image %}style="background-image: url({{ page.media[page.header.hero_image].url }});"{% endif %}>
+    <div class="container">
+        {% if content %}
+            {{ content|raw }}
+        {% else %}
+            {{ page.content }}
+        {% endif %}
+
+        {% for button in page.header.buttons %}
+            <a class="btn{% if button.primary %} btn-primary{% endif %}" href="{{ base_url_relative }}{{ button.url }}">{{ button.text }}</a>
+        {% endfor %}
+
+        {% if page.header.hero_scroll %}
+            <i id="to-start" class="pulse fa fa-angle-down"></i>
+        {% endif %}
+    </div>
+</div>

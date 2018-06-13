@@ -1,9 +1,3 @@
-<div class="modular-row showcase header">
-    <div class="container">
-        {{ content }}
+{% set classes = 'modular-row showcase' %}
 
-        {% for button in page.header.buttons %}
-            <a class="btn{% if button.primary %} btn-primary{% endif %}" href="{{ base_url_relative }}{{ button.url }}">{{ button.text }}</a>
-        {% endfor %}
-    </div>
-</div>
+{% include 'partials/hero.html.twig' with {'classes': classes} %}

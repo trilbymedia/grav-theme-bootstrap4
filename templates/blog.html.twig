@@ -1,23 +1,10 @@
 {% embed 'partials/base.html.twig' %}
 
     {% set collection = page.collection() %}
-    {% set base_url = page.url %}
-    {% set feed_url = base_url %}
-
-    {% if base_url == '/' %}
-        {% set base_url = '' %}
-    {% endif %}
-
-    {% if base_url == base_url_relative %}
-        {% set feed_url = base_url~'/'~page.slug %}
-    {% endif  %}
 
     {% block content %}
-        <div class="header">
-            <div class="container">
-                {{ page.content }}
-            </div>
-        </div>
+        {% include 'partials/hero.html.twig' %}
+
         <div class="main-content">
             <div class="container">
                 <div class="row">
@@ -28,13 +15,13 @@
                         {% endif %}
 
                         {% for child in collection %}
-                            {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
+                            {% include 'partials/blog_item.html.twig' with {'blog': page, 'page': child, 'truncate': true} %}
                         {% endfor %}
 
                     </div>
 
                     <div class="col-sm-3 offset-sm-1 blog-sidebar">
-                        {% include 'partials/sidebar.html.twig' with {'blog':page} %}
+                        {% include 'partials/sidebar.html.twig' with {'blog': page} %}
                     </div>
                 </div>
             </div>
@@ -46,7 +33,7 @@
         <div class="container pagination-container">
             <div class="row">
                 <div class="col-sm-8">
-                    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+                    {% include 'partials/pagination.html.twig' with {'base_url': page.url, 'pagination': collection.params.pagination} %}
                 </div>
             </div>
         </div>

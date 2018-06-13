@@ -29,7 +29,7 @@ body {
 // Header
 .header {
     @include linear-gradient(darken($header-bg,5%), lighten($header-bg,5%));
-    margin-top: -20px;
+    //margin-top: -20px;
     padding-top: 65px;
     padding-bottom: 50px;
     text-align: center;
