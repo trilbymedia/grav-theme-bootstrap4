@@ -1,4 +1,10 @@
-<div class="header hero {{ page.header.hero_classes }} {{ classes }} {{ page.header.hero_scroll ? 'hero-scroll-icon' : '' }}" {% if page.header.hero_image %}style="background-image: url({{ page.media[page.header.hero_image].url }});"{% endif %}>
+{% if page.header.hero_image %}
+  {% set header_image_media = page.media.images[page.header.hero_image] %}
+{% else %}
+  {% set header_image_media = page.media.images|first %}
+{% endif %}
+
+<div class="header hero {{ page.header.hero_classes }} {{ classes }} {{ page.header.hero_scroll ? 'hero-scroll-icon' : '' }}" {% if header_image_media %}style="background-image: url({{ header_image_media.url }});"{% endif %}>
     <div class="container">
         {% if content %}
             {{ content|raw }}
