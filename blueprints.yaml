@@ -3,13 +3,12 @@ version: 1.0.0
 description: "Bootstrap4 is built using the popular **Bootstrap 4** Framework"
 icon: bold
 author:
-  name: Team Grav
-  email: devs@getgrav.org
-  url: http://getgrav.org
-homepage: https://github.com/getgrav/grav-theme-bootstrap4
-demo: http://demo.getgrav.org/bootstrap4-skeleton/
+  name: Trilby Media
+  email: hello@trilby.media
+  url: https://trilby.media
+homepage: https://github.com/trilbymedia/grav-theme-bootstrap4
 keywords: bootstrap, bootstrap4, theme, framework
-bugs: https://github.com/getgrav/grav-theme-bootstrap4/issues
+bugs: https://github.com/trilbymedia/grav-theme-bootstrap4/issues
 license: MIT
 
 dependencies:
