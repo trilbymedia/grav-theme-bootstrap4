@@ -26,7 +26,7 @@
             {% if page.taxonomy.tag %}
             <span class="list-blog-tags float-right">
                 {% for tag in page.taxonomy.tag %}
-                    <a class="badge badge-primary" href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                    <a class="badge badge-primary" href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
                 {% endfor %}
             </span>
             {% endif %}
