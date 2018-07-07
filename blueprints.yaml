@@ -18,6 +18,16 @@ form:
   validation: strict
   fields:
 
+    navbar_position:
+      type: select
+      label: NavBar Position
+      size: small
+      default: static
+      options:
+        static: static
+        fixed-top: fixed-top
+        fixed-bottom: fixed-bottom
+
     navbar_style:
       type: select
       label: NavBar Style
