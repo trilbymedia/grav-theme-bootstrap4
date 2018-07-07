@@ -14,6 +14,8 @@
         {% block stylesheets %}
             {% do assets.add('theme://css/font-awesome.min.css',99) %}
             {% do assets.add('theme://css-compiled/theme.css',98) %}
+            {% if config.theme.navbar_position == 'fixed-top' %}{% do assets.add('theme://css/navbar-fixed-top.css',97) %}{% endif %}
+            {% if config.theme.navbar_position == 'fixed-bottom' %}{% do assets.add('theme://css/navbar-fixed-bottom.css',97) %}{% endif %}
         {% endblock %}
         {{ assets.css() }}
 
