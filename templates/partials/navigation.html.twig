@@ -13,7 +13,7 @@
                 {% for page in pages.children.visible %}
                     {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
                     {% if config.themes.bootstrap4.dropdown.enabled and page.children.visible.count > 0 %}
-                        <li class="nav-item dropdown {{ current_page }}">
+                        <li class="nav-item {% if config.themes.bootstrap4.navbar_position == 'fixed-bottom' %} dropup {% else %} dropdown {% endif %} {{ current_page }}">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.menu }}</a>
                             <div class="dropdown-menu">
                                 {% set current_parent = page.active ? 'active' : '' %}
