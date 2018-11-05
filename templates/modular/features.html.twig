@@ -1,6 +1,6 @@
 <div class="modular-row features {{ page.header.class }}">
     <div class="container">
-        {{ content }}
+        {{ content|raw }}
 
         <div class="feature-items">
             <div class="row">
@@ -13,11 +13,11 @@
 
                         <div class="feature-content {% if feature.icon %}push{% endif %}">
                             {% if feature.header %}
-                                <h4>{{ feature.header }}</h4>
+                                <h4>{{ feature.header|raw }}</h4>
                             {% endif %}
 
                             {% if feature.text %}
-                                <p>{{ feature.text }}</p>
+                                <p>{{ feature.text|raw }}</p>
                             {% endif %}
                         </div>
                     </div>

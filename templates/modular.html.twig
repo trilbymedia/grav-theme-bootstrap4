@@ -15,13 +15,13 @@
     {{ parent() }}
     {% if show_onpage_menu %}
         <script>
-        // singlePageNav initialization & configuration
-        $('.navbar-nav').singlePageNav({
-            //offset: $('#header').outerHeight(),
-            filter: ':not(.external)',
-            updateHash: true,
-            currentClass: 'active'
-        });
+            // singlePageNav initialization & configuration
+            $('.navbar-nav').singlePageNav({
+                //offset: $('#header').outerHeight(),
+                filter: ':not(.external)',
+                updateHash: true,
+                currentClass: 'active'
+            });
         </script>
     {% endif %}
 {% endblock %}
@@ -40,10 +40,8 @@
                 <div class="navbar-collapse collapse justify-content-end">
                     <ul class="navbar-nav">
                         {% for module in page.collection() %}
-
                             {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
                             <li class="nav-item {{ current_module }}"><a class="nav-link" href="#{{ macro.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
-
                         {% endfor %}
                     </ul>
                 </div>
@@ -55,9 +53,10 @@
 {% endblock %}
 
 {% block content %}
-    {{ page.content }}
+    {{ page.content|raw }}
+
     {% for module in page.collection() %}
         <div class="modular-anchor" id="{{ macro.pageLinkName(module.menu) }}"></div>
-        {{ module.content }}
+        {{ module.content|raw }}
     {% endfor %}
 {% endblock %}

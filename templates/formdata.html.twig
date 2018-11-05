@@ -2,9 +2,9 @@
 
 {% block content %}
 
-    {{ content }}
+    {{ content|raw }}
 
-    <div class="alert">{{ form.message }}</div>
+    <div class="alert">{{ form.message|raw }}</div>
     <p>Here is the summary of what you wrote to us:</p>
 
     {% include "forms/data.html.twig" %}

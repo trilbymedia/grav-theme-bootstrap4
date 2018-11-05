@@ -1,5 +1,6 @@
 {% set navbar_style = theme_var('navbar_style') %}
 {% set navbar_bgcolor = theme_var('navbar_bgcolor') %}
+
 <nav class="navbar navbar-expand-md {{ navbar_style }}" style="background-color:{{ navbar_bgcolor }};" role="navigation">
     <div class="container">
         <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">{{ site.title|e('html') }}</a>
@@ -28,10 +29,11 @@
                         <li class="nav-item {{ current_page }}"><a class="nav-link" href="{{ page.url }}">{{ page.menu }}</a></li>
                     {% endif %}
                 {% endfor %}
+
                 {% for mitem in site.menu %}
                     <li class="nav-item">
                         {% set icon = mitem.icon ? '<i class="fa fa-fw fa-' ~ mitem.icon ~ '"></i> ' : '' %}
-                        <a class="nav-link" href="{{ mitem.url }}">{{ icon }}{{ mitem.text }}</a>
+                        <a class="nav-link" href="{{ mitem.url }}">{{ icon|raw }}{{ mitem.text }}</a>
                     </li>
                 {% endfor %}
 
