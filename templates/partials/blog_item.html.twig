@@ -9,7 +9,7 @@
 
         {% if page.header.link %}
             <h3>
-                {% if page.header.continue_link is not sameas(false) %}
+                {% if page.header.continue_link is not same as(false) %}
                     <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
                 {% endif %}
                 <a href="{{ page.header.link }}">{{ page.title }}</a>
@@ -24,16 +24,16 @@
             </span>
 
             {% if page.taxonomy.tag %}
-            <span class="list-blog-tags float-right">
-                {% for tag in page.taxonomy.tag %}
-                    <a class="badge badge-primary" href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-                {% endfor %}
-            </span>
+                <span class="list-blog-tags float-right">
+                    {% for tag in page.taxonomy.tag %}
+                        <a class="badge badge-primary" href="{{ blog.url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                    {% endfor %}
+                </span>
             {% endif %}
         </div>
 
         {% if big_header %}
-            {{ page.media.images|first.cropResize(900,600).html('','blog-header-image') }}
+            {{ page.media.images|first.cropResize(900,600).html('','blog-header-image')|raw }}
         {% else %}
             {% if header_image %}
                 {% if header_image_file %}
@@ -41,30 +41,30 @@
                 {% else %}
                     {% set header_image_media = page.media.images|first %}
                 {% endif %}
-                {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
+                {{ header_image_media.cropZoom(header_image_width, header_image_height).html|raw }}
             {% endif %}
         {% endif %}
     </div>
 
     <div class="list-blog-padding">
 
-        {% if page.header.continue_link is sameas(false) %}
-            <p>{{ page.content }}</p>
+        {% if page.header.continue_link is same as(false) %}
+            <p>{{ page.content|raw }}</p>
             {% if not truncate %}
-            {% set show_prev_next = true %}
+                {% set show_prev_next = true %}
             {% endif %}
         {% elseif truncate and page.summary != page.content %}
-            <p>{{ page.summary }}</p>
+            <p>{{ page.summary|raw }}</p>
             <p><a href="{{ page.url }}">Continue Reading...</a></p>
         {% elseif truncate %}
             {% if page.summary != page.content %}
                 <p>{{ page.content|truncate(550) }}</p>
             {% else %}
-                <p>{{ page.content }}</p>
+                <p>{{ page.content|raw }}</p>
             {% endif %}
             <p><a href="{{ page.url }}">Continue Reading...</a></p>
         {% else %}
-            <p>{{ page.content }}</p>
+            <p>{{ page.content|raw }}</p>
             {% set show_prev_next = true %}
         {% endif %}
 

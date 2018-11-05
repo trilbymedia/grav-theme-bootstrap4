@@ -4,8 +4,9 @@
     <div class="main-content text-center" id="error">
         <div class="container">
             <h1>Error {{ page.header.http_response_code }}</h1>
+
             <p>
-                {{ page.content }}
+                {{ page.content|raw }}
             </p>
         </div>
     </div>
