@@ -1,9 +1,9 @@
 # v1.1.0
-## XX/XX/2018
+## 11/06/2018
 
 1. [](#new)
     * TWIG 2.0 compatibility fixes
-    
+
 # v1.0.1
 ## 07/02/2018
 
