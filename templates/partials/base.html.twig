@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
     <head>
         {% block head %}
             <meta charset="utf-8" />
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-
             {% include 'partials/metadata.html.twig' %}
 
             <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
@@ -15,7 +14,6 @@
                 {% do assets.add('theme://css/font-awesome.min.css', 99) %}
                 {% do assets.add('theme://css-compiled/theme.css', 98) %}
             {% endblock %}
-            {{ assets.css()|raw }}
 
             {% block javascripts %}
                 {% do assets.add('jquery', 101) %}
@@ -27,7 +25,12 @@
                     {% do assets.add('theme://js/html5shiv-printshiv.min.js') %}
                 {% endif %}
             {% endblock %}
-            {{ assets.js()|raw }}
+
+            {% block assets deferred %}
+                {{ assets.css()|raw }}
+                {{ assets.js()|raw }}
+            {% endblock %}
+
         {% endblock head %}
     </head>
 

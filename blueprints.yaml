@@ -1,5 +1,5 @@
 name: Bootstrap4
-version: 1.1.0
+version: 1.2.0
 description: "Bootstrap4 is built using the popular **Bootstrap 4** Framework"
 icon: bold
 author:
@@ -12,7 +12,8 @@ bugs: https://github.com/trilbymedia/grav-theme-bootstrap4/issues
 license: MIT
 
 dependencies:
-  - bootstrapper
+  - { name: bootstrapper}
+  - { name: grav, version: '>=1.5.10' }
 
 form:
   validation: strict
