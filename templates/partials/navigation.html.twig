@@ -1,7 +1,7 @@
 {% set navbar_style = theme_var('navbar_style') %}
 {% set navbar_bgcolor = theme_var('navbar_bgcolor') %}
 
-<nav class="navbar navbar-expand-md {{ navbar_style }}" style="background-color:{{ navbar_bgcolor }};" role="navigation">
+<nav class="navbar navbar-expand-md {{ navbar_style|e }}" style="background-color:{{ navbar_bgcolor|e }};" role="navigation">
     <div class="container">
         <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">{{ site.title|e('html') }}</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
             <ul class="navbar-nav">
                 {% for page in pages.children.visible %}
                     {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-                    {% if config.themes.bootstrap4.dropdown.enabled and page.children.visible.count > 0 %}
+                    {% if theme.dropdown.enabled and page.children.visible.count > 0 %}
                         <li class="nav-item dropdown {{ current_page }}">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.menu }}</a>
                             <div class="dropdown-menu">
