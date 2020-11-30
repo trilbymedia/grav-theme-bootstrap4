@@ -1,7 +1,7 @@
 {% set navbar_style = theme_var('navbar_style') %}
 {% set navbar_bgcolor = theme_var('navbar_bgcolor') %}
 
-<nav class="navbar navbar-expand-md {{ navbar_style }}" style="background-color:{{ navbar_bgcolor }};" role="navigation">
+<nav class="navbar navbar-expand-md {{ navbar_style|e }}" style="background-color:{{ navbar_bgcolor|e }};" role="navigation">
     <div class="container">
         <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">{{ site.title|e('html') }}</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

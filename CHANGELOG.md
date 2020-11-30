@@ -1,3 +1,11 @@
+# v1.2.1
+## 11/30/2020
+
+1. [](#bugfix)
+    * Escape theme vars
+    * Fixed broken dropdown_enabled setting [#12](https://github.com/trilbymedia/grav-theme-bootstrap4/pulls/12)
+    * Blueprint typo [#11](https://github.com/trilbymedia/grav-theme-bootstrap4/pulls/11)
+
 # v1.2.0
 ## 03/21/2019
 
